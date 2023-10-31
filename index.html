@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kenia&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="hero">
+    <main>
+      <h1>Seguro No Pagamos <span class="cooperativa">Cooperativa</span></h1>
+      <section id="formSection">
+        <h2>Complete sus datos:</h2>
+        <form>
+          <div>
+            <label for="firstname">Nombre:</label>
+            <input
+              name="firstname"
+              id="firstname"
+              placeholder="Juan"
+              required
+            />
+          </div>
+          <div>
+            <label for="lastname">Apellido:</label>
+            <input name="lastname" id="lastname" placeholder="Pérez" required />
+          </div>
+          <div>
+            <label for="idNumber">DNI:</label>
+            <input
+              name="idNumber"
+              id="idNumber"
+              placeholder="30321456"
+              required
+            />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="juan_perez@ejemplo.com"
+              required
+            />
+          </div>
+          <div>
+            <label for="phone">Teléfono:</label>
+            <input name="phone" id="phone" placeholder="1145674321" required />
+          </div>
+          <div>
+            <label for="insuranceType">Tipo de seguro:</label>
+            <select name="insuranceType" id="insuranceType">
+              <option value="500">Básico</option>
+              <option value="1000">Intermedio</option>
+              <option value="1500">Premium</option>
+            </select>
+            <span id="insuranceValue">Valor: $500</span>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

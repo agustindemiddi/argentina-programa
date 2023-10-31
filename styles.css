@@ -1,0 +1,141 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+}
+
+main {
+  background-color: #fff;
+  margin-top: 25px;
+  margin-left: 50%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  background-color: #fff;
+  padding: 5px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Kenia', sans-serif;
+}
+
+.cooperativa {
+  font-size: inherit;
+  color: brown;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  margin: 10px 0;
+}
+
+span,
+p:last-child {
+  font-weight: bold;
+}
+
+p,
+input,
+label,
+span,
+select,
+option {
+  font-size: 0.85rem;
+}
+
+.checkSection {
+  text-align: center;
+}
+
+.hero {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://media.ambito.com/p/f80aefb6cf9d1bb9e382f35b0f2620cc/adjuntos/239/imagenes/039/584/0039584128/1200x675/smart/leonardo-cositorto-zoejpg.jpg');
+  background-size: cover;
+  background-position: center;
+}
