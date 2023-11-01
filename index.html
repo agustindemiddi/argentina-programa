@@ -3,69 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kenia&family=Nunito:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Calculadora Básica</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body class="hero">
+  <body>
     <main>
-      <h1>Seguro No Pagamos <span class="cooperativa">Cooperativa</span></h1>
-      <section id="formSection">
-        <h2>Complete sus datos:</h2>
-        <form>
-          <div>
-            <label for="firstname">Nombre:</label>
-            <input
-              name="firstname"
-              id="firstname"
-              placeholder="Juan"
-              required
-            />
-          </div>
-          <div>
-            <label for="lastname">Apellido:</label>
-            <input name="lastname" id="lastname" placeholder="Pérez" required />
-          </div>
-          <div>
-            <label for="idNumber">DNI:</label>
-            <input
-              name="idNumber"
-              id="idNumber"
-              placeholder="30321456"
-              required
-            />
-          </div>
-          <div>
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="juan_perez@ejemplo.com"
-              required
-            />
-          </div>
-          <div>
-            <label for="phone">Teléfono:</label>
-            <input name="phone" id="phone" placeholder="1145674321" required />
-          </div>
-          <div>
-            <label for="insuranceType">Tipo de seguro:</label>
-            <select name="insuranceType" id="insuranceType">
-              <option value="500">Básico</option>
-              <option value="1000">Intermedio</option>
-              <option value="1500">Premium</option>
-            </select>
-            <span id="insuranceValue">Valor: $500</span>
-          </div>
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
+      <h1>Argentina Programa 4.0 / Clase 2</h1>
+      <div id="exercise1">
+        <h2>Ejercicio 1: Callback</h2>
+        <p>Tengo desarrollada la siguiente función en JavaScript:</p>
+        <div class="code">
+          <p><code>function suma(a, b, callback) {</code></p>
+          <p><code>let c = a + b;</code></p>
+          <p><code>callback();</code></p>
+          <p><code>}</code></p>
+        </div>
+        <br />
+        <div>
+          <p><strong>¿Qué es el tercer parámetro recibido?</strong></p>
+          <p>
+            <span
+              ><em
+                >Una callback function es una función que se pasa como argumento
+                a otra función.</em
+              ></span
+            >
+          </p>
+          <br />
+          <p>
+            <strong
+              >¿En qué casos es obligatorio desarrollar este tipo de
+              funciones?</strong
+            >
+          </p>
+          <p>
+            <span
+              ><em
+                >Es muy abstracta esta pregunta. Técnicamente, nunca. Entiendo
+                que la pregunta va orientada a acciones asíncronas? Pero no sé,
+                no termino de etender.</em
+              ></span
+            >
+          </p>
+          <br />
+          <p><strong>Realizar un llamado a la función de ejemplo.</strong></p>
+          <p>
+            <code
+              >suma(3, 5, () => console.log('La suma se ha realizado
+              exitosamente!'));</code
+            ><button type="button" onclick="run()">Correr código</button>
+          </p>
+        </div>
+        <br />
+        <br />
+        <br />
+        <button type="button" onclick="toggle()">Ir a Ejercicio 2</button>
+      </div>
+      <div class="hidden" id="exercise2">
+        <h2>Ejercicio 2: Calculadora Básica</h2>
+        <p>Desarrollar una calculadora que tenga:</p>
+        <p>- 2 campos inputs para los operandos</p>
+        <p>
+          - 4 botones de operadores básicos (suma, resta, multiplicación,
+          división)
+        </p>
+        <p>Al realizar la cuenta se deberá actualizar el campo resultado.</p>
+        <br />
+        <input type="number" id="operand1" placeholder="Operando 1" />
+        <input type="number" id="operand2" placeholder="Operando 2" />
+        <br />
+        <button onclick="add()">+</button>
+        <button onclick="substract()">-</button>
+        <button onclick="multiply()">*</button>
+        <button onclick="divide()">/</button>
+        <!-- Use next 4 buttons instead with "Exercise 1: 1 function with all operations" uncommented in app.js -->
+        <!-- <button id="add">+</button>
+        <button id="substract">-</button>
+        <button id="multiply">*</button>
+        <button id="divide">/</button> -->
+        <br />
+        <input type="text" id="result" placeholder="Resultado" readonly />
+        <button type="button" onclick="reset()">Reset</button>
+        <br />
+        <br />
+        <br />
+        <button type="button" onclick="toggle()">Ir a Ejercicio 1</button>
+      </div>
     </main>
 
     <script src="./app.js"></script>

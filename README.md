@@ -1,23 +1,29 @@
 **Argentina Programa 4.0 - Tramo 2**
 
-# Clase 1 - Ejercitación
+# Clase 2 - Ejercitación
 
-## Repaso HTML - CSS
+## Ejercicio 1
 
 **_Consigna_**
-_Seguro No Pagamos Cooperativa_ es una compañía de seguros que lleva 2 años en el mercado. Hasta el momento trabajan con los esquemas tradicionales de venta, es decir, contacto telefónico o a través de sus asesores con los potenciales clientes.
-El directorio de la compañía se reunió con el departamento de sistemas para solicitarle un desarrollo de un sitio web. El objetivo es que los futuros clientes puedan solicitar un contacto a través de la web para que un asesor se contacte con ellos.
-Vos como parte del equipo de desarrollo debes realizar el maquetado HTML de este sitio web, dándole estilos al mismo con la utilización de CSS.
-Los datos que se deben solicitar son los siguientes:
 
-- Nombre
-- Apellido
-- DNI
-- Email
-- Teléfono
-- Tipo de seguro
-  - Básico
-  - Intermedio
-  - Premium
+Tengo desarrollada la siguiente función en JavaScript:
 
-Al seleccionar el tipo de seguro (básico, intermedio, premium) se deberá mostrar en pantalla el valor de cada uno.
+    function suma(a, b, callback) {
+    let c = a + b;
+    callback();
+    }
+
+¿Qué es el tercer parámetro recibido?
+¿En qué casos es obligatorio desarrollar este tipo de funciones?
+Realizar un llamado a la función de ejemplo.
+
+## Ejercicio 2
+
+**_Consigna_**
+
+Desarrollar una calculadora que tenga:
+
+- 2 campos inputs para los operandos.
+- 4 botones de operadores básicos (suma, resta, multiplicación, división).
+
+Al realizar la cuenta se deberá actualizar el campo resultado.

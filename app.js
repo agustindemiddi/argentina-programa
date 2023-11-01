@@ -1,85 +1,105 @@
-const formSection = document.querySelector('#formSection');
-const form = document.querySelector('form');
-const firstnameInput = document.querySelector('#firstname');
-const lastnameInput = document.querySelector('#lastname');
-const idNumberInput = document.querySelector('#idNumber');
-const emailInput = document.querySelector('#email');
-const phoneInput = document.querySelector('#phone');
-const insuranceTypeInput = document.querySelector('#insuranceType');
-const span = document.querySelector('#insuranceValue');
+const exercise1 = document.getElementById('exercise1');
+const exercise2 = document.getElementById('exercise2');
 
-const onChangeInsuranceType = () => {
-  span.innerText = '';
-  span.append(`Valor: $${insuranceTypeInput.value}`);
+const toggle = () => {
+  exercise1.classList.toggle('hidden');
+  exercise2.classList.toggle('hidden');
 };
 
-insuranceTypeInput.addEventListener('change', onChangeInsuranceType);
+// Exercise 1:
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+const suma = (a, b, callback) => {
+  let c = a + b;
+  callback();
+};
 
-  const sections = document.querySelectorAll('section');
-  if (sections.length === 2) sections[1].remove();
+const run = () =>
+  suma(3, 5, () => console.log('La suma se ha realizado exitosamente!'));
 
-  const insuranceType =
-    insuranceTypeInput.value === '500'
-      ? 'Básico'
-      : insuranceTypeInput.value === '1000'
-      ? 'Intermedio'
-      : 'Premium';
+// Exercise 2 (using 1 function per operation):
 
-  const data = {
-    firstname: firstnameInput.value,
-    lastname: lastnameInput.value,
-    idNumber: idNumberInput.value,
-    email: emailInput.value,
-    phone: phoneInput.value,
-    insuranceType: insuranceType,
-    insuranceCost: insuranceTypeInput.value,
-  };
+const operand1Input = document.getElementById('operand1');
+const operand2Input = document.getElementById('operand2');
+const resultInput = document.getElementById('result');
 
-  const firstnameParagraph = document.createElement('p');
-  firstnameParagraph.append(`Nombre: ${data.firstname}`);
+const reset = () => {
+  operand1Input.value = '';
+  operand2Input.value = '';
+  resultInput.value = '';
+};
 
-  const lastnameParagraph = document.createElement('p');
-  lastnameParagraph.append(`Apellido: ${data.lastname}`);
+const add = () => {
+  const operand1 = parseFloat(operand1Input.value);
+  const operand2 = parseFloat(operand2Input.value);
+  if (operand1 && operand2) resultInput.value = operand1 + operand2;
+};
 
-  const idNumberParagraph = document.createElement('p');
-  idNumberParagraph.append(`DNI: ${data.idNumber}`);
+const substract = () => {
+  const operand1 = parseFloat(operand1Input.value);
+  const operand2 = parseFloat(operand2Input.value);
+  if (operand1 && operand2) resultInput.value = operand1 - operand2;
+};
 
-  const emailParagraph = document.createElement('p');
-  emailParagraph.append(`Email: ${data.email}`);
+const multiply = () => {
+  const operand1 = parseFloat(operand1Input.value);
+  const operand2 = parseFloat(operand2Input.value);
+  if (operand1 && operand2) resultInput.value = operand1 * operand2;
+};
 
-  const phoneParagraph = document.createElement('p');
-  phoneParagraph.append(`Teléfono: ${data.phone}`);
+const divide = () => {
+  const operand1 = parseFloat(operand1Input.value);
+  const operand2 = parseFloat(operand2Input.value);
+  if (Number.isNaN(operand1) || Number.isNaN(operand2)) return;
+  if (operand1 === 0 && operand2 === 0) {
+    resultInput.value = 'Indeterminado';
+    setTimeout(() => reset(), 1000);
+  }
+  if (operand1 !== 0 && operand2 === 0) {
+    window.location.href = 'http://endless.horse/';
+  }
+  if (operand1 !== NaN && operand2 !== 0) {
+    resultInput.value = operand1 / operand2;
+  }
+};
 
-  const insuranceTypeParagraph = document.createElement('p');
-  insuranceTypeParagraph.append(`Tipo de seguro: ${data.insuranceType}`);
+// // Exercise 2 (using 1 function with all operations):
 
-  const insuranceCostParagraph = document.createElement('p');
-  insuranceCostParagraph.append(`Valor: $${data.insuranceCost}`);
+// const addButton = document.getElementById('add');
+// const substractButton = document.getElementById('substract');
+// const multiplyButton = document.getElementById('multiply');
+// const divideButton = document.getElementById('divide');
 
-  const checkSection = document.createElement('section');
-  checkSection.classList.add('checkSection');
-  const h2 = document.createElement('h2');
-  h2.innerHTML = 'Verifique sus datos:';
-  checkSection.append(h2);
-  checkSection.append(firstnameParagraph);
-  checkSection.append(lastnameParagraph);
-  checkSection.append(idNumberParagraph);
-  checkSection.append(emailParagraph);
-  checkSection.append(phoneParagraph);
-  checkSection.append(insuranceTypeParagraph);
-  checkSection.append(insuranceCostParagraph);
+// const operand1Input = document.getElementById('operand1');
+// const operand2Input = document.getElementById('operand2');
+// const resultInput = document.getElementById('result');
 
-  const main = document.querySelector('main');
-  main.append(checkSection);
+// const reset = () => {
+//   operand1Input.value = '';
+//   operand2Input.value = '';
+//   resultInput.value = '';
+// }
 
-  firstnameInput.value = '';
-  lastnameInput.value = '';
-  idNumberInput.value = '';
-  emailInput.value = '';
-  phoneInput.value = '';
-  insuranceTypeInput.value = '500';
-  span.innerText = 'Valor: $500';
-});
+// const basicMath = (operand1, operand2, operation) => {
+//   const num1 = parseFloat(operand1);
+//   const num2 = parseFloat(operand2);
+//   if (operation === '+') resultInput.value = num1 + num2;
+//   if (operation === '-') resultInput.value = num1 - num2;
+//   if (operation === '*') resultInput.value = num1 * num2;
+//   if (operation === '/') resultInput.value = num1 / num2;
+// };
+
+// addButton.addEventListener('click', (e) =>
+//   basicMath(operand1Input.value, operand2Input.value, e.target.innerText)
+// );
+
+// substractButton.addEventListener('click', (e) =>
+//   basicMath(operand1Input.value, operand2Input.value, e.target.innerText)
+// );
+
+// multiplyButton.addEventListener('click', (e) =>
+//   basicMath(operand1Input.value, operand2Input.value, e.target.innerText)
+// );
+
+// divideButton.addEventListener('click', (e) =>
+//   basicMath(operand1Input.value, operand2Input.value, e.target.innerText)
+// );
