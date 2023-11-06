@@ -1,29 +1,19 @@
 **Argentina Programa 4.0 - Tramo 2**
 
-# Clase 2 - Ejercitación
+# Clase 3 - Ejercitación
 
-## Ejercicio 1
-
-**_Consigna_**
-
-Tengo desarrollada la siguiente función en JavaScript:
-
-    function suma(a, b, callback) {
-    let c = a + b;
-    callback();
-    }
-
-¿Qué es el tercer parámetro recibido?
-¿En qué casos es obligatorio desarrollar este tipo de funciones?
-Realizar un llamado a la función de ejemplo.
-
-## Ejercicio 2
+## Mi primer componente
 
 **_Consigna_**
 
-Desarrollar una calculadora que tenga:
+Crear una aplicación con React CLI llamada "myapp".
 
-- 2 campos inputs para los operandos.
-- 4 botones de operadores básicos (suma, resta, multiplicación, división).
+Desarrollar el maquetado de una página de detalle de un producto para un sitio de e-commerce. Se deberán visualizar los siguientes datos:
 
-Al realizar la cuenta se deberá actualizar el campo resultado.
+- Nombre
+- Descripción
+- Precio
+- SKU
+- Cantidad disponible
+
+Realizar un maquetado con los datos, desarrollado con componentes.
