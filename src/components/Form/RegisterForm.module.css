@@ -1,0 +1,17 @@
+.registerForm {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #37bbed;
+  border: 3px solid white;
+  border-radius: 0.5rem;
+
+  padding: 2.5rem 4rem;
+  gap: 1.65rem;
+}
+
+.registerForm input {
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 0.35rem;
+}
