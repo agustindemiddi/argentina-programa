@@ -1,24 +1,24 @@
 **Argentina Programa 4.0 - Tramo 2**
 
-# Clase 6 - Ejercitación
+# Clase 7 - Ejercitación
 
-## Mi primer formulario
+## Mi primer ecommerce
 
 **_Consigna_**
 
-Desarrollar el registro de una página web. El registro debe tener los siguientes campos:
+Desarrollar el maquetado de una página de detalle de un producto para un sitio de
+ecommerce. Se deberán visualizar los siguientes datos:
 
 - Nombre
-- Apellido
-- Email
-- Teléfono
-- Password
-- Confirmar password
+- Descripción
+- Precio
+- SKU
+- Cantidad disponible
 
-Realizar el maquetado utilizando React.js y JSX. Sólo con el maquetado el trabajo está aprobado.
+Realizar un maquetado con los datos, desarrollado con componentes.
 
-Como extra, en caso de querer mejor nota, se valorará la realización de algún evento relacionado a este formulario, como por ejemplo, el evento visto en la clase número 5: onSubmit().
+Agregar al mismo un botón "Comprar".
 
-Este evento podría mostrar por consola, por un alert o la misma página utilizando useState(), guardando este registro en ese estado y cuando cambie el estado, mostrarlo en pantalla al usuario.
+Al hacer click en dicho botón se deberá mostrar debajo del mismo un mensaje al usuario que diga: "Gracias por su compra".
 
-Si bien son puntos extras, la idea es que puedan ir entrenando el uso de los eventos y el useState() para la entrega final. Todo lo extra será valorado, pero lo excluyente es que cumpla la consigna.
+Resolverlo utilizando manejo de estados.

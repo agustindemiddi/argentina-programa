@@ -1,54 +1,14 @@
-html {
-  box-sizing: border-box;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 body {
-  text-align: center;
-  color: white;
-  padding: 0;
   margin: 0;
-
-  background-color: #1a1a1a;
-}
-
-#root {
+  display: flex;
+  place-items: center;
+  min-width: 320px;
   min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer {
-  background-color: rgba(245, 255, 250, 0.5);
-  padding: 1rem;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-p {
-  margin: 0;
 }
