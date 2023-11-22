@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import TaskList from './components/TaskList/TaskList';
 import TaskForm from './components/TaskForm/TaskForm';
 
@@ -10,10 +12,16 @@ const DUMMY_LIST = [
 ];
 
 const App = () => {
+  const [tasks, setTasks] = useState(DUMMY_LIST);
+
+  const hanldeAddTask = (newTask) => {
+    setTasks((prevState) => [newTask, ...prevState]);
+  };
+
   return (
     <>
-      <TaskForm />
-      <TaskList list={DUMMY_LIST} />
+      <TaskForm onAddTask={hanldeAddTask} />
+      <TaskList list={tasks} />
     </>
   );
 };
