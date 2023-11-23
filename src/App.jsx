@@ -1,5 +1,6 @@
 import TaskList from './components/TaskList/TaskList';
 import TaskForm from './components/TaskForm/TaskForm';
+import ButtonDeleteAll from './components/ButtonDeleteAll/ButtonDeleteAll';
 
 import useLocalStorage from './hooks/useLocalStorage';
 
@@ -36,7 +37,7 @@ const App = () => {
         onCompleteTask={handleCompleteTask}
         onDeleteTask={handleDeleteTask}
       />
-      <button onClick={handleDeleteAllTasks}>Borrar lista</button>
+      <ButtonDeleteAll onClick={handleDeleteAllTasks} />
     </>
   ) : (
     <p>Aún no agregaste ninguna tarea.</p>

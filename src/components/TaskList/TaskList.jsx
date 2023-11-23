@@ -4,7 +4,7 @@ import styles from './TaskList.module.css';
 
 const TaskList = ({ list, onCompleteTask, onDeleteTask }) => {
   return (
-    <ul>
+    <ul className={styles['task-list']}>
       {list.map((task) => (
         <li key={task.id}>
           <TaskItem
