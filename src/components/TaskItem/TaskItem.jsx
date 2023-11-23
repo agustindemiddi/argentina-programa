@@ -12,7 +12,7 @@ const TaskItem = ({
         checked={isComplete}
         onChange={() => onCompleteTask(id)}
       />
-      <p>{name}</p>
+      <p className={isComplete ? `${styles.isComplete}` : null}>{name}</p>
       <button onClick={() => onDeleteTask(id)}>Eliminar</button>
     </article>
   );
