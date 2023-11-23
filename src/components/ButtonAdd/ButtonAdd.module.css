@@ -54,10 +54,6 @@
   transform: translateX(0);
 }
 
-.button:focus {
-  outline: none;
-}
-
 .button:active .icon svg {
   transform: scale(1.2);
 }

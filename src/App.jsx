@@ -1,33 +1,38 @@
+import { useState } from 'react';
+
 import TaskList from './components/TaskList/TaskList';
 import TaskForm from './components/TaskForm/TaskForm';
 import ButtonDeleteAll from './components/ButtonDeleteAll/ButtonDeleteAll';
+import Modal from './components/UI/Modal/Modal';
 
 import useLocalStorage from './hooks/useLocalStorage';
 
 const App = () => {
   const [tasks, setTasks] = useLocalStorage('tasks');
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const hanldeAddTask = (newTask) => {
+  const hanldeAddTask = (newTask) =>
     setTasks((prevTasks) => [newTask, ...prevTasks]);
-  };
 
-  const handleCompleteTask = (taskId) => {
-    setTasks((prevTasks) => {
-      return prevTasks.map((task) =>
+  const handleCompleteTask = (taskId) =>
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
         task.id === taskId ? { ...task, isComplete: !task.isComplete } : task
-      );
-    });
-  };
+      )
+    );
 
-  const handleDeleteTask = (taskId) => {
-    setTasks((prevTasks) => {
-      const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
-      return updatedTasks;
-    });
-  };
+  const handleDeleteTask = (taskId) =>
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
 
-  const handleDeleteAllTasks = () => {
+  const handleDeleteAllTasks = () => setShowConfirmation(true);
+
+  const handleConfirmDeleteAll = () => {
     setTasks([]);
+    setShowConfirmation(false);
+  };
+
+  const handleCancelDeleteAll = () => {
+    setShowConfirmation(false);
   };
 
   let content = tasks.length ? (
@@ -48,7 +53,18 @@ const App = () => {
       <header>
         <TaskForm onAddTask={hanldeAddTask} />
       </header>
-      <main>{content}</main>
+
+      <main>
+        {showConfirmation && (
+          <Modal
+            title='¡Ojota! 👀'
+            message='¿Estás seguro de que querés borrar todas las tareas?'
+            onConfirm={handleConfirmDeleteAll}
+            onCancel={handleCancelDeleteAll}
+          />
+        )}
+        {content}
+      </main>
       <footer>foo</footer>
     </>
   );

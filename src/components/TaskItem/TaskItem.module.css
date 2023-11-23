@@ -1,8 +1,12 @@
 .task-item {
   display: flex;
-  align-items: center;
-  margin: .5rem;
-  gap: .5rem;
+  /* align-items: top; */
+  margin: 0.5rem;
+  gap: 0.5rem;
+}
+
+.task-item p {
+  text-align: start;
 }
 
 .isComplete {

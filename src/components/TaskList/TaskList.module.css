@@ -3,5 +3,11 @@
 
   display: flex;
   flex-direction: column;
-  align-items: start;
+  margin: 0 10%;
+}
+
+@media (min-width: 960px) {
+  .task-list {
+    margin: 0 25%;
+  }
 }

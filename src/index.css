@@ -37,7 +37,7 @@ main {
   align-items: center;
 }
 
-footer {
+#root footer {
   background-color: rgba(245, 255, 250, 0.5);
   padding: 1rem;
 }
