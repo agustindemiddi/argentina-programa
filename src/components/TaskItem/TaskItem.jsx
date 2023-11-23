@@ -1,3 +1,5 @@
+import ButtonDeleteItem from '../ButtonDeleteItem/ButtonDeleteItem';
+
 import styles from './TaskItem.module.css';
 
 const TaskItem = ({
@@ -13,7 +15,7 @@ const TaskItem = ({
         onChange={() => onCompleteTask(id)}
       />
       <p className={isComplete ? `${styles.isComplete}` : null}>{name}</p>
-      <button onClick={() => onDeleteTask(id)}>Eliminar</button>
+      <ButtonDeleteItem onClick={() => onDeleteTask(id)} />
     </li>
   );
 };

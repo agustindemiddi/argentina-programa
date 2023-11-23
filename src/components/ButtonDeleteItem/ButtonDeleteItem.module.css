@@ -1,0 +1,25 @@
+.button {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  background: rgb(250, 100, 100);
+  border: none;
+  border-radius: 5rem;
+}
+
+.button {
+  transition: 500ms;
+}
+
+.button svg {
+  width: 12px;
+  fill: white;
+}
+
+.button:hover {
+  background: rgb(250, 50, 50);
+}
+
+.button:active svg {
+  transform: scale(0.8);
+}
