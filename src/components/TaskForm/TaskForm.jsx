@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 
+import ButtonAdd from '../ButtonAdd/ButtonAdd';
+
 import styles from './TaskForm.module.css';
 
 const TaskForm = ({ onAddTask }) => {
@@ -21,13 +23,14 @@ const TaskForm = ({ onAddTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles['task-form']} onSubmit={handleSubmit}>
       <input
+        className={styles['add-task-input']}
         type='text'
         placeholder='Aprender React.js'
         ref={taskNameInputRef}
       />
-      <button>Agregar</button>
+      <ButtonAdd />
     </form>
   );
 };

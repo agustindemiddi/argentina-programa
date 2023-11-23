@@ -44,8 +44,11 @@ const App = () => {
 
   return (
     <>
-      <TaskForm onAddTask={hanldeAddTask} />
-      {content}
+      <header>
+        <TaskForm onAddTask={hanldeAddTask} />
+      </header>
+      <main>{content}</main>
+      <footer>foo</footer>
     </>
   );
 };
