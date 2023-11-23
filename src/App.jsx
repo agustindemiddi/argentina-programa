@@ -32,15 +32,22 @@ const App = () => {
     });
   };
 
+  const handleDeleteAllTasks = (taskId) => {
+    setTasks([]);
+  };
+
   let content = <p>Aún no agregaste ninguna tarea.</p>;
 
   if (tasks.length)
     content = (
-      <TaskList
-        list={tasks}
-        onCompleteTask={handleCompleteTask}
-        onDeleteTask={handleDeleteTask}
-      />
+      <>
+        <TaskList
+          list={tasks}
+          onCompleteTask={handleCompleteTask}
+          onDeleteTask={handleDeleteTask}
+        />
+        <button onClick={handleDeleteAllTasks}>Borrar lista</button>
+      </>
     );
 
   return (
