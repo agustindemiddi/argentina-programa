@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import TaskList from './components/TaskList/TaskList';
 import TaskForm from './components/TaskForm/TaskForm';
 import ButtonDeleteAll from './components/ButtonDeleteAll/ButtonDeleteAll';
 import Modal from './components/UI/Modal/Modal';
+import AlertTasksUpdated from './components/AlertTasksUpdated/AlertTasksUpdated';
 import TeamMembers from './components/TeamMembers/TeamMembers';
 
 import useLocalStorage from './hooks/useLocalStorage';
@@ -11,6 +12,20 @@ import useLocalStorage from './hooks/useLocalStorage';
 const App = () => {
   const [tasks, setTasks] = useLocalStorage('tasks');
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [isInitialRender, setIsInitialRender] = useState(true);
+
+  useEffect(() => {
+    if (!isInitialRender) {
+      setShowAlert(true);
+      const timeout = setTimeout(() => {
+        setShowAlert(false);
+      }, 2000);
+      return () => clearTimeout(timeout);
+    } else {
+      setIsInitialRender(false);
+    }
+  }, [tasks]);
 
   const hanldeAddTask = (newTask) =>
     setTasks((prevTasks) => [newTask, ...prevTasks]);
@@ -54,8 +69,8 @@ const App = () => {
       <header>
         <TaskForm onAddTask={hanldeAddTask} />
       </header>
-
       <main>
+        {showAlert && <AlertTasksUpdated />}
         {showConfirmation && (
           <Modal
             title='¡Ojota! 👀'
@@ -66,7 +81,9 @@ const App = () => {
         )}
         {content}
       </main>
-      <footer><TeamMembers /></footer>
+      <footer>
+        <TeamMembers />
+      </footer>
     </>
   );
 };
