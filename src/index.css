@@ -39,6 +39,8 @@ main {
 
 #root footer {
   background-color: rgba(80, 80, 80, 0.5);
+  color: rgb(120, 120, 120);
+  font-size: .8rem;
   padding: 1rem;
 }
 

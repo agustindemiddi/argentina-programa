@@ -1,0 +1,7 @@
+.team-members a:hover {
+  color: rgb(160, 160, 160);
+}
+
+.team-members a:active {
+  color: rgb(200, 200, 200);
+}

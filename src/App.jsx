@@ -4,6 +4,7 @@ import TaskList from './components/TaskList/TaskList';
 import TaskForm from './components/TaskForm/TaskForm';
 import ButtonDeleteAll from './components/ButtonDeleteAll/ButtonDeleteAll';
 import Modal from './components/UI/Modal/Modal';
+import TeamMembers from './components/TeamMembers/TeamMembers';
 
 import useLocalStorage from './hooks/useLocalStorage';
 
@@ -65,7 +66,7 @@ const App = () => {
         )}
         {content}
       </main>
-      <footer>foo</footer>
+      <footer><TeamMembers /></footer>
     </>
   );
 };
