@@ -1,6 +1,10 @@
 import styles from './TaskItem.module.css';
 
-const TaskItem = ({ task: { id, name, isComplete }, onCompleteTask }) => {
+const TaskItem = ({
+  task: { id, name, isComplete },
+  onCompleteTask,
+  onDeleteTask,
+}) => {
   return (
     <article>
       <input
@@ -9,7 +13,7 @@ const TaskItem = ({ task: { id, name, isComplete }, onCompleteTask }) => {
         onChange={() => onCompleteTask(id)}
       />
       <p>{name}</p>
-      <button>Eliminar</button>
+      <button onClick={() => onDeleteTask(id)}>Eliminar</button>
     </article>
   );
 };

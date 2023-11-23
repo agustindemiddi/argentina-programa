@@ -26,10 +26,21 @@ const App = () => {
     });
   };
 
+  const handleDeleteTask = (taskId) => {
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
+      return updatedTasks;
+    });
+  };
+
   return (
     <>
       <TaskForm onAddTask={hanldeAddTask} />
-      <TaskList list={tasks} onCompleteTask={handleCompleteTask} />
+      <TaskList
+        list={tasks}
+        onCompleteTask={handleCompleteTask}
+        onDeleteTask={handleDeleteTask}
+      />
     </>
   );
 };
