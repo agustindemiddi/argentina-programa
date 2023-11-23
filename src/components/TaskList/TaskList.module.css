@@ -6,12 +6,6 @@
   margin: 0 10%;
 }
 
-.task-list li  {
-  padding: 1rem 2rem;
-  border: 1px solid rgb(80, 80, 80);
-  border-radius: 2rem;
-}
-
 @media (min-width: 960px) {
   .task-list {
     margin: 0 25%;
