@@ -1,17 +1,10 @@
-import { useEffect, useState } from 'react';
-
 import TaskList from './components/TaskList/TaskList';
 import TaskForm from './components/TaskForm/TaskForm';
 
-const App = () => {
-  const storedTasks = localStorage.getItem('tasks');
-  const [tasks, setTasks] = useState(
-    storedTasks ? JSON.parse(storedTasks) : []
-  );
+import useLocalStorage from './hooks/useLocalStorage';
 
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
+const App = () => {
+  const [tasks, setTasks] = useLocalStorage('tasks');
 
   const hanldeAddTask = (newTask) => {
     setTasks((prevTasks) => [newTask, ...prevTasks]);
@@ -32,23 +25,22 @@ const App = () => {
     });
   };
 
-  const handleDeleteAllTasks = (taskId) => {
+  const handleDeleteAllTasks = () => {
     setTasks([]);
   };
 
-  let content = <p>Aún no agregaste ninguna tarea.</p>;
-
-  if (tasks.length)
-    content = (
-      <>
-        <TaskList
-          list={tasks}
-          onCompleteTask={handleCompleteTask}
-          onDeleteTask={handleDeleteTask}
-        />
-        <button onClick={handleDeleteAllTasks}>Borrar lista</button>
-      </>
-    );
+  let content = tasks.length ? (
+    <>
+      <TaskList
+        list={tasks}
+        onCompleteTask={handleCompleteTask}
+        onDeleteTask={handleDeleteTask}
+      />
+      <button onClick={handleDeleteAllTasks}>Borrar lista</button>
+    </>
+  ) : (
+    <p>Aún no agregaste ninguna tarea.</p>
+  );
 
   return (
     <>
