@@ -33,14 +33,21 @@ const App = () => {
     });
   };
 
-  return (
-    <>
-      <TaskForm onAddTask={hanldeAddTask} />
+  let content = <p>Aún no agregaste ninguna tarea.</p>;
+
+  if (tasks.length)
+    content = (
       <TaskList
         list={tasks}
         onCompleteTask={handleCompleteTask}
         onDeleteTask={handleDeleteTask}
       />
+    );
+
+  return (
+    <>
+      <TaskForm onAddTask={hanldeAddTask} />
+      {content}
     </>
   );
 };
