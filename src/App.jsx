@@ -15,13 +15,21 @@ const App = () => {
   const [tasks, setTasks] = useState(DUMMY_LIST);
 
   const hanldeAddTask = (newTask) => {
-    setTasks((prevState) => [newTask, ...prevState]);
+    setTasks((prevTasks) => [newTask, ...prevTasks]);
+  };
+
+  const handleCompleteTask = (taskId) => {
+    setTasks((prevTasks) => {
+      return prevTasks.map((task) =>
+        task.id === taskId ? { ...task, isComplete: !task.isComplete } : task
+      );
+    });
   };
 
   return (
     <>
       <TaskForm onAddTask={hanldeAddTask} />
-      <TaskList list={tasks} />
+      <TaskList list={tasks} onCompleteTask={handleCompleteTask} />
     </>
   );
 };
