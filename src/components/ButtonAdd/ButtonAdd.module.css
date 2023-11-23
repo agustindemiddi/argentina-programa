@@ -24,7 +24,7 @@
 
 .button .icon {
   position: absolute;
-  border-left: 2px solid rgb(120, 200, 120);
+  border-left: 2px solid rgb(120, 190, 120);
   transform: translateX(75px);
   height: 40px;
   width: 40px;
@@ -40,7 +40,7 @@
 }
 
 .button:hover {
-  background: rgb(120, 200, 120);
+  background: rgb(120, 190, 120);
 }
 
 .button:hover .text {

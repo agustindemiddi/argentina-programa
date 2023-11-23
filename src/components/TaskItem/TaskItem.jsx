@@ -6,7 +6,7 @@ const TaskItem = ({
   onDeleteTask,
 }) => {
   return (
-    <article>
+    <li className={styles['task-item']}>
       <input
         type='checkbox'
         checked={isComplete}
@@ -14,7 +14,7 @@ const TaskItem = ({
       />
       <p className={isComplete ? `${styles.isComplete}` : null}>{name}</p>
       <button onClick={() => onDeleteTask(id)}>Eliminar</button>
-    </article>
+    </li>
   );
 };
 
