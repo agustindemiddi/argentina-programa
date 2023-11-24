@@ -5,15 +5,22 @@ import ButtonAdd from '../ButtonAdd/ButtonAdd';
 
 import styles from './TaskForm.module.css';
 
-const TaskForm = ({ onAddTask }) => {
+const TaskForm = ({ onAddTask, onError }) => {
   const taskNameInputRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const taskString = taskNameInputRef.current.value;
+    if (!taskString) {
+      onError();
+      taskNameInputRef.current.focus();
+      return;
+    }
+
     const task = {
       id: uuid(),
-      name: taskNameInputRef.current.value,
+      name: taskString,
       isComplete: false,
     };
 

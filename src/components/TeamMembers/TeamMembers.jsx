@@ -12,14 +12,9 @@ const TeamMembers = () => {
         Atilio García
       </a>
       {`, `}
-      <a href='https://github.com/' target='_blank'>
-        Daniela Sosa
-      </a>
+      <span>Daniela Sosa</span>
       {` and `}
-      <a href='https://github.com/' target='_blank'>
-        Leandro Gaitán
-      </a>
-      .
+      <span>Leandro Gaitán</span>.
     </p>
   );
 };

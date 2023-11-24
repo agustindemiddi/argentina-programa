@@ -14,4 +14,5 @@
 
 .isComplete {
   text-decoration: line-through;
+  color: rgb(80, 80, 80);
 }

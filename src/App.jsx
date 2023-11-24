@@ -4,23 +4,33 @@ import TaskList from './components/TaskList/TaskList';
 import TaskForm from './components/TaskForm/TaskForm';
 import ButtonDeleteAll from './components/ButtonDeleteAll/ButtonDeleteAll';
 import Modal from './components/UI/Modal/Modal';
-import AlertTasksUpdated from './components/AlertTasksUpdated/AlertTasksUpdated';
+import Alert from './components/Alert/Alert';
 import TeamMembers from './components/TeamMembers/TeamMembers';
 
 import useLocalStorage from './hooks/useLocalStorage';
 
 const App = () => {
   const [tasks, setTasks] = useLocalStorage('tasks');
-  const [showConfirmation, setShowConfirmation] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [isInitialRender, setIsInitialRender] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    if (isError) {
+      const timeout = setTimeout(() => {
+        setIsError(false);
+      }, 3000);
+      return () => clearTimeout(timeout);
+    }
+  }, [isError]);
 
   useEffect(() => {
     if (!isInitialRender) {
       setShowAlert(true);
       const timeout = setTimeout(() => {
         setShowAlert(false);
-      }, 2000);
+      }, 3000);
       return () => clearTimeout(timeout);
     } else {
       setIsInitialRender(false);
@@ -40,15 +50,17 @@ const App = () => {
   const handleDeleteTask = (taskId) =>
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
 
-  const handleDeleteAllTasks = () => setShowConfirmation(true);
+  const handleDeleteAllTasks = () => setShowDeleteConfirmation(true);
 
   const handleConfirmDeleteAll = () => {
     setTasks([]);
-    setShowConfirmation(false);
+    setShowDeleteConfirmation(false);
   };
 
-  const handleCancelDeleteAll = () => {
-    setShowConfirmation(false);
+  const handleCancelDeleteAll = () => setShowDeleteConfirmation(false);
+
+  const handleError = () => {
+    setIsError(true);
   };
 
   let content = tasks.length ? (
@@ -67,11 +79,16 @@ const App = () => {
   return (
     <>
       <header>
-        <TaskForm onAddTask={hanldeAddTask} />
-      </header>
-      <main>
-        {showAlert && <AlertTasksUpdated />}
-        {showConfirmation && (
+        {showAlert && (
+          <Alert
+            text='Tu lista de tareas ha sido actualizada correctamente ✔'
+            error={isError}
+          />
+        )}
+        {isError && (
+          <Alert text='¡No seas vago, añadí una tarea!' error={isError} />
+        )}
+        {showDeleteConfirmation && (
           <Modal
             title='¡Ojota! 👀'
             message='¿Estás seguro de que querés borrar todas las tareas?'
@@ -79,8 +96,9 @@ const App = () => {
             onCancel={handleCancelDeleteAll}
           />
         )}
-        {content}
-      </main>
+        <TaskForm onAddTask={hanldeAddTask} onError={handleError} />
+      </header>
+      <main>{content}</main>
       <footer>
         <TeamMembers />
       </footer>
