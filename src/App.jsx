@@ -6,6 +6,7 @@ import ButtonDeleteAll from './components/ButtonDeleteAll/ButtonDeleteAll';
 import Modal from './components/UI/Modal/Modal';
 import Alert from './components/Alert/Alert';
 import TeamMembers from './components/TeamMembers/TeamMembers';
+import Navbar from './components/Navbar/Navbar';
 
 import useLocalStorage from './hooks/useLocalStorage';
 
@@ -79,6 +80,7 @@ const App = () => {
   return (
     <>
       <header>
+        <Navbar />
         {showAlert && (
           <Alert
             text='Tu lista de tareas ha sido actualizada correctamente ✔'
@@ -96,9 +98,11 @@ const App = () => {
             onCancel={handleCancelDeleteAll}
           />
         )}
-        <TaskForm onAddTask={hanldeAddTask} onError={handleError} />
       </header>
-      <main>{content}</main>
+      <main>
+        <TaskForm onAddTask={hanldeAddTask} onError={handleError} />
+        {content}
+      </main>
       <footer>
         <TeamMembers />
       </footer>

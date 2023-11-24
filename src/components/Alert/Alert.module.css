@@ -2,7 +2,7 @@
   position: absolute;
   width: 30rem;
   left: calc(50% - 15rem);
-  top: 3rem;
+  top: 2rem;
 
   display: flex;
   justify-content: center;
@@ -12,10 +12,12 @@
 
 .update {
   z-index: 3;
-  background-color: rgb(120, 190, 120);
+  background-color: rgb(150, 220, 150);
+  border: 2px solid rgb(120, 190, 120);
 }
 
 .error {
   z-index: 4;
-  background-color: rgb(250, 50, 50);
+  background-color: rgb(250, 100, 100);
+  border: 2px solid rgb(250, 50, 50);
 }

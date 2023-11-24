@@ -15,12 +15,12 @@ const TaskItem = ({
 
   return (
     <li className={styles['task-item']}>
-      <time
+      <span
         className={styles.date}
         style={isComplete ? { visibility: 'hidden' } : null}
       >
-        {date}
-      </time>
+        Tarea añadida: {date}
+      </span>
       <div className={styles['task-item-body']}>
         <input
           type='checkbox'
