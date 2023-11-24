@@ -22,11 +22,13 @@ const TaskForm = ({ onAddTask, onError }) => {
       id: uuid(),
       name: taskString,
       isComplete: false,
+      timestamp: Date.now(),
     };
 
     onAddTask(task);
 
     taskNameInputRef.current.value = '';
+    taskNameInputRef.current.focus();
   };
 
   return (

@@ -17,15 +17,6 @@ const App = () => {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    if (isError) {
-      const timeout = setTimeout(() => {
-        setIsError(false);
-      }, 3000);
-      return () => clearTimeout(timeout);
-    }
-  }, [isError]);
-
-  useEffect(() => {
     if (!isInitialRender) {
       setShowAlert(true);
       const timeout = setTimeout(() => {
@@ -36,6 +27,15 @@ const App = () => {
       setIsInitialRender(false);
     }
   }, [tasks]);
+
+  useEffect(() => {
+    if (isError) {
+      const timeout = setTimeout(() => {
+        setIsError(false);
+      }, 3000);
+      return () => clearTimeout(timeout);
+    }
+  }, [isError]);
 
   const hanldeAddTask = (newTask) =>
     setTasks((prevTasks) => [newTask, ...prevTasks]);
