@@ -10,8 +10,8 @@ const Navbar = () => {
         src={logo}
         alt='Logo de Argentina Programa'
       />
-      <h1>lista de tareas</h1>
-      <span style={{width: '120px', visibility: 'hidden'}}></span>
+      <h1>Lista de Tareas</h1>
+      <span style={{ width: '120px', visibility: 'hidden' }}></span>
     </nav>
   );
 };
