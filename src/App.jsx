@@ -14,14 +14,14 @@ const App = () => {
   const [tasks, setTasks] = useLocalStorage('tasks');
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [isInitialRender, setIsInitialRender] = useState(true);
-  const [showAlert, setShowAlert] = useState(false);
+  const [isTasksUpdate, setIsTasksUpdate] = useState(false);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     if (!isInitialRender) {
-      setShowAlert(true);
+      setIsTasksUpdate(true);
       const timeout = setTimeout(() => {
-        setShowAlert(false);
+        setIsTasksUpdate(false);
       }, 3000);
       return () => clearTimeout(timeout);
     } else {
@@ -53,16 +53,14 @@ const App = () => {
 
   const handleDeleteAllTasks = () => setShowDeleteConfirmation(true);
 
-  const handleConfirmDeleteAll = () => {
+  const handleConfirmDeleteAllTasks = () => {
     setTasks([]);
     setShowDeleteConfirmation(false);
   };
 
-  const handleCancelDeleteAll = () => setShowDeleteConfirmation(false);
+  const handleCancelDeleteAllTasks = () => setShowDeleteConfirmation(false);
 
-  const handleError = () => {
-    setIsError(true);
-  };
+  const handleError = () => setIsError(true);
 
   let content = tasks.length ? (
     <>
@@ -81,21 +79,12 @@ const App = () => {
     <>
       <header>
         <Navbar />
-        {showAlert && (
-          <Alert
-            text='Tu lista de tareas se ha actualizado correctamente ✔'
-            error={isError}
-          />
-        )}
-        {isError && (
-          <Alert text='¡No seas vago, añadí una tarea!' error={isError} />
-        )}
+        {isTasksUpdate && <Alert />}
+        {isError && <Alert isError />}
         {showDeleteConfirmation && (
           <Modal
-            title='¡Ojota! 👀'
-            message='¿Estás seguro de que querés borrar todas las tareas?'
-            onConfirm={handleConfirmDeleteAll}
-            onCancel={handleCancelDeleteAll}
+            onConfirm={handleConfirmDeleteAllTasks}
+            onCancel={handleCancelDeleteAllTasks}
           />
         )}
       </header>
