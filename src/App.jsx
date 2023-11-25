@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import TaskList from './components/TaskList/TaskList';
 import TaskForm from './components/TaskForm/TaskForm';
-import ButtonDeleteAll from './components/ButtonDeleteAll/ButtonDeleteAll';
+import ButtonDeleteAll from './components/UI/Buttons/ButtonDeleteAll/ButtonDeleteAll';
 import Modal from './components/UI/Modal/Modal';
-import Alert from './components/Alert/Alert';
+import Alert from './components/UI/Alert/Alert';
 import TeamMembers from './components/TeamMembers/TeamMembers';
 import Navbar from './components/Navbar/Navbar';
 

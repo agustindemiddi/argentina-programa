@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 
-import ButtonAdd from '../ButtonAdd/ButtonAdd';
+import ButtonAdd from '../UI/Buttons/ButtonAdd/ButtonAdd';
 
 import styles from './TaskForm.module.css';
 

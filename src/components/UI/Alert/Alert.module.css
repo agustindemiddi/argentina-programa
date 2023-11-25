@@ -1,8 +1,8 @@
 .alert {
-  position: absolute;
+  position:fixed;
   width: 30rem;
   left: calc(50% - 15rem);
-  top: 2rem;
+  top: 6.5rem;
 
   display: flex;
   justify-content: center;

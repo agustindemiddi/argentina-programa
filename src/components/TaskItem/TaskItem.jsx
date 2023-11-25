@@ -1,4 +1,4 @@
-import ButtonDeleteItem from '../ButtonDeleteItem/ButtonDeleteItem';
+import ButtonDeleteItem from '../UI/Buttons/ButtonDeleteItem/ButtonDeleteItem';
 
 import styles from './TaskItem.module.css';
 

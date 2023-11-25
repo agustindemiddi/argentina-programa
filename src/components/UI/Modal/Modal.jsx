@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 
-import ButtonConfirmDelete from '../../ButtonConfirmDelete/ButtonConfirmDelete';
-import ButtonCancelDelete from '../../ButtonCancelDelete/ButtonCancelDelete';
+import ButtonConfirmDelete from '../Buttons/ButtonConfirmDelete/ButtonConfirmDelete';
+import ButtonCancelDelete from '../Buttons/ButtonCancelDelete/ButtonCancelDelete';
 
 import styles from './Modal.module.css';
 
