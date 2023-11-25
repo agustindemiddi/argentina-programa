@@ -1,9 +1,21 @@
 .nav {
+  height: 60px;
   background-color: rgba(160, 160, 160, 0.5);
   padding: 0.65rem;
   display: flex;
+  align-items: center;
+}
+
+.nav h1 {
+  flex: 1;
+  font-family: 'lovelo', sans-serif;
+  font-size: 4rem;
+  margin: 0;
+  transform: translateY(1rem);
+  text-shadow: -5px -5px rgb(85, 185, 185);
 }
 
 .logo {
-  max-width: 120px;
+  width: 120px;
+  align-self: center;
 }

@@ -83,7 +83,7 @@ const App = () => {
         <Navbar />
         {showAlert && (
           <Alert
-            text='Tu lista de tareas ha sido actualizada correctamente ✔'
+            text='Tu lista de tareas se ha actualizado correctamente ✔'
             error={isError}
           />
         )}

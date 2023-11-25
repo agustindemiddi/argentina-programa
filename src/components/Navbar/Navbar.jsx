@@ -1,8 +1,8 @@
-import logo from '../../../public/logo.png';
+import logo from '/logo.png';
 
 import styles from './Navbar.module.css';
 
-const Navbar = ({ children }) => {
+const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <img
@@ -10,7 +10,8 @@ const Navbar = ({ children }) => {
         src={logo}
         alt='Logo de Argentina Programa'
       />
-      {children}
+      <h1>lista de tareas</h1>
+      <span style={{width: '120px', visibility: 'hidden'}}></span>
     </nav>
   );
 };

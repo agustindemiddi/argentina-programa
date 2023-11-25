@@ -15,19 +15,19 @@ const TaskItem = ({
 
   return (
     <li className={styles['task-item']}>
-      <span
-        className={styles.date}
-        style={isComplete ? { visibility: 'hidden' } : null}
-      >
+      <span style={isComplete ? { visibility: 'hidden' } : null}>
         Tarea añadida: {date}
       </span>
       <div className={styles['task-item-body']}>
-        <input
-          type='checkbox'
-          checked={isComplete}
-          onChange={() => onCompleteTask(id)}
-        />
-        <p className={isComplete ? `${styles.isComplete}` : null}>{name}</p>
+        <label htmlFor={id}>
+          <input
+            type='checkbox'
+            checked={isComplete}
+            onChange={() => onCompleteTask(id)}
+            id={id}
+          />
+          <p className={isComplete ? `${styles.isComplete}` : null}>{name}</p>
+        </label>
         <ButtonDeleteItem onClick={() => onDeleteTask(id)} />
       </div>
     </li>
