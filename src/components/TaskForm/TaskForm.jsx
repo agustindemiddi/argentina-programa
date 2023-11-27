@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
 
-import ButtonAdd from '../UI/Buttons/ButtonAdd/ButtonAdd';
+import ButtonAddTask from '../UI/Buttons/ButtonAddTask/ButtonAddTask';
 
 import styles from './TaskForm.module.css';
 
@@ -32,14 +32,9 @@ const TaskForm = ({ onAddTask, onError }) => {
   };
 
   return (
-    <form className={styles['task-form']} onSubmit={handleSubmit}>
-      <input
-        className={styles['add-task-input']}
-        type='text'
-        placeholder='Aprender React.js'
-        ref={taskNameInputRef}
-      />
-      <ButtonAdd />
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <input placeholder='Aprender React.js' ref={taskNameInputRef} />
+      <ButtonAddTask />
     </form>
   );
 };

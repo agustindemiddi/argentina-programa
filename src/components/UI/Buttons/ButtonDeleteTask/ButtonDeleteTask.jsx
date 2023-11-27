@@ -1,6 +1,6 @@
-import styles from './ButtonDeleteItem.module.css';
+import styles from './ButtonDeleteTask.module.css';
 
-const ButtonDeleteItem = ({ onClick }) => {
+const ButtonDeleteTask = ({ onClick }) => {
   return (
     <button className={styles.button} onClick={onClick}>
       <svg
@@ -15,4 +15,4 @@ const ButtonDeleteItem = ({ onClick }) => {
   );
 };
 
-export default ButtonDeleteItem;
+export default ButtonDeleteTask;

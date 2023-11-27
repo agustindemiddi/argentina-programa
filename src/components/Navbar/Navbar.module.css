@@ -20,6 +20,11 @@
   align-self: center;
 }
 
+.nav span {
+  width: 120px;
+  visibility: hidden;
+}
+
 @media (max-width: 992px) {
   .nav h1 {
     font-size: 2.5rem;

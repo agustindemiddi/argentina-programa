@@ -1,4 +1,4 @@
-import ButtonDeleteItem from '../UI/Buttons/ButtonDeleteItem/ButtonDeleteItem';
+import ButtonDeleteTask from '../UI/Buttons/ButtonDeleteTask/ButtonDeleteTask';
 
 import styles from './TaskItem.module.css';
 
@@ -14,11 +14,11 @@ const TaskItem = ({
   const date = `${day}/${month}/${year}`;
 
   return (
-    <li className={styles['task-item']}>
+    <li className={styles.item}>
       <span style={isComplete ? { visibility: 'hidden' } : null}>
         Tarea añadida: {date}
       </span>
-      <div className={styles['task-item-body']}>
+      <div>
         <label htmlFor={id}>
           <input
             type='checkbox'
@@ -28,7 +28,7 @@ const TaskItem = ({
           />
           <p className={isComplete ? `${styles.isComplete}` : null}>{name}</p>
         </label>
-        <ButtonDeleteItem onClick={() => onDeleteTask(id)} />
+        <ButtonDeleteTask onClick={() => onDeleteTask(id)} />
       </div>
     </li>
   );

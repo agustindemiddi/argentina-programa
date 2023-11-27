@@ -1,9 +1,9 @@
-import styles from './ButtonDeleteAll.module.css';
+import styles from './ButtonAddTask.module.css';
 
-const ButtonDeleteAll = ({ onClick }) => {
+const ButtonAddTask = () => {
   return (
-    <button className={styles.button} onClick={onClick}>
-      <span className={styles.text}>Borrar lista</span>
+    <button className={styles.button}>
+      <span className={styles.text}>Agregar</span>
       <span className={styles.icon}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -18,4 +18,4 @@ const ButtonDeleteAll = ({ onClick }) => {
   );
 };
 
-export default ButtonDeleteAll;
+export default ButtonAddTask;
