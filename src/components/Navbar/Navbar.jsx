@@ -6,7 +6,6 @@ const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <img
-        className={styles.logo}
         src={logo}
         alt='Logo de Argentina Programa'
       />
