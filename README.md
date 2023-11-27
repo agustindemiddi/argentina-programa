@@ -2,7 +2,7 @@
 
 # Trabajo Integrador Final
 
-**++_Desarrollo en React.js_++**
+**_Desarrollo en React.js_**
 
 ## Consigna
 
